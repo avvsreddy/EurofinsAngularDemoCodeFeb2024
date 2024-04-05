@@ -1,0 +1,10 @@
+<h1>Simple Calculator</h1>
+<hr>
+
+<div> <input type="text" name="fno" [(ngModel)]="firstInput"  #firstNumber  placeholder="First Number">  </div>
+<div> <input type="text" name="sno" [(ngModel)] = "secondInput"   #secondNumber placeholder="Second Number">  </div>
+<!-- <div> <button (click)="findSum(firstNumber.value, secondNumber.value)">Find Sum</button> </div> -->
+<!-- <div> <button (click)="findSum2()">Find Sum</button> -->
+
+    <div> <button class="btn btn-primary "  (click)="findSum3()">Find Sum</button>
+<h3>Result : {{result}}</h3>
