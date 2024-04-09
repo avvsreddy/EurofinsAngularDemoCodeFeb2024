@@ -1,0 +1,4 @@
+td.task-Completed{
+    text-decoration: line-through;
+    color: silver;
+}

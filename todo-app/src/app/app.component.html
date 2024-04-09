@@ -1,0 +1,46 @@
+<div class="container-fluid">
+
+<h1 class="bg-dark  text-center text-light p-4 ">Todo List Application</h1>
+
+</div>
+
+<div class="container">
+<div class="row">
+  <div class="col-8">
+<input type="text" [(ngModel)] = "todoText" class="form-control" placeholder="What do you 
+want to do?">
+</div>
+<div class="col-4">
+<button class="btn btn-primary" (click)="onClick()">Add</button>
+</div>
+
+</div>
+</div>
+
+@if (todoList.length >= 1) {
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ToDo</th>
+      <th>IsCompleted</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of todoList; track $index) 
+    {
+    <tr>
+      <td>{{item.id}}</td>
+      <td [class.task-Completed]="item.isCompleted">
+        {{item.todoText}}</td>
+      <td><input type="checkbox" 
+        (change)="isCompleteChanged($index)"
+        [checked]="item.isCompleted"></td>
+    </tr>
+  }
+  </tbody>
+</table>
+}@else {
+  <h3>No todo items found, please add new todo item</h3>
+}
+  

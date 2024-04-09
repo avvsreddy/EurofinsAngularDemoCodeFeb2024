@@ -1,0 +1,40 @@
+<div class="text-center bg-info p-4 ">
+<h1>ToDo App - Local Storage</h1>
+</div>
+
+<div class="container mt-3">
+<input 
+  type="text" 
+  #todotext
+  name="todoText" 
+  placeholder="What do you want to do?">
+<button  class="btn btn-primary m-2 btn-sm " (click)="addTodo(todotext.value)">Add</button>
+
+<hr>
+
+
+ 
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Todo</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (todo of todoList; track $index) {
+      <tr>
+        <td>{{todo.id}}</td>
+        
+        <td [class.strike]="todo.isCompleted">{{todo.todoText}}</td>
+      
+        <td> Completed? <input #isCompletedChkBox (change)="todoChanged($index)" type="checkbox" [value]="todo.isCompleted" [checked]="todo.isCompleted">
+        </td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
+
+

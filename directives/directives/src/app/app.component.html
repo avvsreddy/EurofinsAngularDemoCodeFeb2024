@@ -1,0 +1,53 @@
+<h1>Directives Demo the old way</h1>
+<hr>
+
+<h3 *ngIf="isAuthenticated else elseBlock">{{confidentialData}}</h3>
+
+<ng-template #elseBlock>
+  <p>this is for unauthorized users</p>
+</ng-template>
+
+<h1>Directives Demo the new way from 17v </h1>
+<hr>
+@if(isAuthenticated)
+{
+  <h3>{{confidentialData}}</h3>
+}
+@else
+{
+  <h3>this is for unauthorized users </h3>
+}
+
+<h1>Demo of displaying data using *ngFor</h1>
+<hr>
+
+<ul>
+  <li *ngFor="let p of products">{{p.name}}</li>
+</ul>
+
+<hr>
+<table>
+  <thead>
+  <tr>
+    <th>S.No</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+</thead>
+<tbody>
+  <!-- <tr *ngFor="let p of products;let i=index "> -->
+  @for (p of products; track $index)
+   {
+    <tr>
+    <td>{{$index+1}}</td>
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.price}}</td>
+  </tr>
+  }
+</tbody>
+</table>
+
+
+

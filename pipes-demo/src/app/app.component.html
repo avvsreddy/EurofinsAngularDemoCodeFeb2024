@@ -1,0 +1,40 @@
+<h1 class="bg-danger text-center p-3 ">Students List</h1>
+
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Roll Number</th>
+        <th>Name</th>
+        <th>Language 1</th>
+        <th>Language 2</th>
+        <th>Science</th>
+        <th>Maths</th>
+        <th>Total</th>
+        <th>Percentage</th>
+        <th>DOB</th>
+        <th>Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (st of students; track $index) {
+      <tr>
+        <td>{{st.rollNumber}}</td>
+        <td>{{st.name | toupper}}</td>
+        <td>{{st.lang1}}</td>
+        <td>{{st.lang2}}</td>
+        <td>{{st.science}}</td>
+        <td>{{st.maths}}</td>
+        <td>{{st.lang1 + st. lang2 + st.maths + st.science}}</td>
+        <td>{{ ((st.lang1 + st. lang2 + st.maths + st.science) / totMarks) | percent:'.2' }}</td>
+        <td>{{st.dob | date:'fullDate'}}</td>
+        <td>{{st.fee | currency:'INR'}}</td>
+
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
+
