@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row bg-danger p-3 ">
+        <div class="col"><h1>Defacts List</h1></div>
+        <div class="col text-end ">
+            <app-defectstatistics 
+            [defectsCount]="defectsCount" 
+            [defectsResolvedCount]="defectsResolvedCount" 
+            [defectsPendingCount]="defectsPendingCount">
+            </app-defectstatistics></div>
+    </div>
+    
+</div>
+<div class="container">
+    <div class="row bg-info p-2 mb-2 ">
+        <div class="col">ID</div>
+        <div class="col">Title</div>
+        <div class="col">Description</div>
+        <div class="col">Status</div>
+        <div class="col">Action</div>
+    
+    </div>
+@for (defect of defectsList; track $index) {
+
+    <app-defect [defect]="defect" (onDefectResolve)="onResolve($event)"></app-defect>
+}
+</div>

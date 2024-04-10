@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col">{{defect?.id}}</div>
+    <div class="col">
+        <span [class.strike]="defect?.isResolved">
+        {{defect?.title}}
+    </span>
+    </div>
+    <div class="col">{{defect?.desc}}</div>
+    <div class="col"> <input type="checkbox" [checked]="defect?.isResolved" disabled > Resolved</div>
+   
+    <div class="col">
+        @if (!defect?.isResolved) {
+        <button btn btn-primary (click)="onBtnClick()">It's Resolved</button>
+    }
+    </div>
+
+</div>
