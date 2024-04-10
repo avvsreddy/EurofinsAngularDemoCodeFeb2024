@@ -19,11 +19,11 @@ if(defactResolved)
 {
   defactResolved.isResolved = true;
 }
-let defectsCount = this.defectsList.length;
-let defectsResolvedCount = (this.defectsList.filter(d => d.isResolved)).length;
-let defectsPendingCount = (this.defectsList.filter(d => d.isResolved == false)).length;
+this.defectsCount = this.defectsList.length;
+this.defectsResolvedCount = (this.defectsList.filter(d => d.isResolved)).length;
+this.defectsPendingCount = (this.defectsList.filter(d => d.isResolved == false)).length;
 
-alert(defectsCount)
+
 }
 ngOnInit(): void {
   this.defectsList.push({
@@ -45,9 +45,9 @@ ngOnInit(): void {
     isResolved:false
   });
 
-let defectsCount = this.defectsList.length;
-let defectsResolvedCount = (this.defectsList.filter(d => d.isResolved)).length;
-let defectsPendingCount = (this.defectsList.filter(d => d.isResolved == false)).length;
+  this.defectsCount = this.defectsList.length;
+  this.defectsResolvedCount = (this.defectsList.filter(d => d.isResolved)).length;
+  this.defectsPendingCount = (this.defectsList.filter(d => d.isResolved == false)).length;
 //alert(defectsCount)
 }
 
