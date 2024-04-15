@@ -9,6 +9,7 @@ import { ServicesComponent } from './services/services.component';
 import { Component } from '@angular/core';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { CanActivate, CanDeactivateContactForm, CanDeactivateGeneric } from './guards/secure.guards';
 
 export const routes: Routes = 
 [
@@ -19,10 +20,10 @@ export const routes: Routes =
         path:'about', component:AboutComponent,title:'Routing Demo App - About'
     },
     {
-        path:'about', component:AboutComponent, children:[
+        path:'about', component:AboutComponent, canActivateChild:[CanActivate], children:[
             {path:'teams',component:TeamsComponent},
             {path:'company',component:CompanyComponent},
-            {path:'services',component:ServicesComponent},
+            {path:'services',component:ServicesComponent, },
         ],
     },
     // {
@@ -35,10 +36,13 @@ export const routes: Routes =
     //     path:'about/services',component:ServicesComponent
     // },
     {
-        path:'contact', component:ContactComponent,title:'Routing Demo App - Contact'
+        path:'contact', component:ContactComponent,title:'Routing Demo App - Contact', canDeactivate:[CanDeactivateGeneric]
     },
     {
-        path:'products', component:ProductListComponent,title:'Routing Demo App - Products List'
+        path:'products', 
+        component:ProductListComponent,
+        title:'Routing Demo App - Products List',
+        canActivate:[CanActivate]
     },
     {
         path:'products/addtocart:id', component:AddToCartComponent,title:'Routing Demo App - Add To Cart'

@@ -1,0 +1,11 @@
+<h1>Products List</h1>
+<ul>
+  @for (product of products$ | async; track $index) {
+ 
+    <!-- <li *ngFor="let product of product"> -->
+      <li>
+   {{product.id}} {{ product.name }} - ${{ product.price }}
+ 
+  </li>
+}
+</ul>

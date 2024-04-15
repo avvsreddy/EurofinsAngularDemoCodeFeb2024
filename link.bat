@@ -1,1 +1,1 @@
-mklink /D node_modules shared\node_modules
+mklink /D node_modules ..\shared\node_modules

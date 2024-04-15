@@ -1,0 +1,104 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Smartphone",
+        "description": "A powerful smartphone with advanced features.",
+        "price": 599.99,
+        "brand": "TechCo",
+        "category": "Electronics"
+      },
+      {
+        "id": 2,
+        "name": "Laptop",
+        "description": "A sleek and high-performance laptop for professionals.",
+        "price": 1299.99,
+        "brand": "TechGadget",
+        "category": "Electronics"
+      },
+      {
+        "id": 3,
+        "name": "Running Shoes",
+        "description": "Comfortable and durable shoes for running enthusiasts.",
+        "price": 89.99,
+        "brand": "FootFit",
+        "category": "Sports & Outdoors"
+      },
+      {
+        "id": 4,
+        "name": "Coffee Maker",
+        "description": "An efficient coffee maker for brewing your favorite coffee at home.",
+        "price": 49.99,
+        "brand": "BrewMaster",
+        "category": "Home & Kitchen"
+      },
+      {
+        "id": 5,
+        "name": "Wireless Headphones",
+        "description": "Immerse yourself in music with these wireless headphones.",
+        "price": 149.99,
+        "brand": "SoundWave",
+        "category": "Electronics"
+      },
+      {
+        "id": 6,
+        "name": "Yoga Mat",
+        "description": "A non-slip and comfortable yoga mat for your yoga practice.",
+        "price": 29.99,
+        "brand": "YogaGear",
+        "category": "Sports & Outdoors"
+      },
+      {
+        "id": 7,
+        "name": "Air Fryer",
+        "description": "Enjoy healthier fried foods with this efficient air fryer.",
+        "price": 79.99,
+        "brand": "AirChef",
+        "category": "Home & Kitchen"
+      },
+      {
+        "id": 8,
+        "name": "Digital Camera",
+        "description": "Capture precious moments with this high-quality digital camera.",
+        "price": 399.99,
+        "brand": "CapturePro",
+        "category": "Electronics"
+      },
+      {
+        "id": 9,
+        "name": "Hiking Backpack",
+        "description": "A spacious and durable backpack for your hiking adventures.",
+        "price": 69.99,
+        "brand": "OutdoorGear",
+        "category": "Sports & Outdoors"
+      },
+      {
+        "id": 10,
+        "name": "Toaster",
+        "description": "Efficient toaster for your morning toast.",
+        "price": 24.99,
+        "brand": "ToastMaster",
+        "category": "Home & Kitchen"
+      },
+      {
+        "id": 11,
+        "name": "Wireless Mouse",
+        "description": "Enjoy the freedom of movement with this wireless mouse.",
+        "price": 29.99,
+        "brand": "ClickTech",
+        "category": "Electronics"
+      },
+      {
+        "id": 12,
+        "name": "Tennis Racket",
+        "description": "A high-performance tennis racket for competitive players.",
+        "price": 149.99,
+        "brand": "AceSports",
+        "category": "Sports & Outdoors"
+      }
+    ]
+  }
+
+
+
+  

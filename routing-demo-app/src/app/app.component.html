@@ -24,12 +24,29 @@
 </nav>
 </div>
 </div>
-<!-- <app-home></app-home>
+
+<button #showme>Show products</button>
+
+@defer (on hover(showme)) {
+<app-product-list></app-product-list>
+}@placeholder {
+  <h1>Loading wait...</h1>
+}
+@loading(minimum 5s) {
+  
+  <img src="../assets/loading.webp" alt="loading...">
+}
+<app-home></app-home>
 <hr>
 <app-contact></app-contact>
 <hr>
-<app-about></app-about> -->
+<app-about></app-about>
+<hr>
 
+
+
+
+@defer () {
 <router-outlet></router-outlet>
-
+}
 <app-footer></app-footer>

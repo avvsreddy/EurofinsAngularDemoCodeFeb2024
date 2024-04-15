@@ -1,0 +1,10 @@
+<h1>Products List</h1>
+<hr>
+
+<ul>
+@for (item of productsList; track $index) {
+
+<li>{{item.name}} - {{item.price}}</li>
+
+}
+</ul>
