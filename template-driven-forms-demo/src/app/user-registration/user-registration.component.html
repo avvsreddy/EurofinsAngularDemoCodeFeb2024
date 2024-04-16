@@ -3,17 +3,26 @@
         <div class="col-6">
     <h2>Student Registration Form</h2>
 
-<!-- {{studentReg.form | json}} -->
-
+{{studentReg.form.controls | json}}<br>
+`isvalid {{name.valid}} invalid - {{name.invalid}} - istouched {{name.touched}} - dirty - {{name.dirty}}`
+<h1>{{msg}}</h1>
 {{student | json}}
-    <form #studentReg="ngForm" (ngSubmit)="onSubmit()">
+    <form #studentReg="ngForm" (ngSubmit)="onSubmit(studentReg)">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" name="name" placeholder="Enter name" [(ngModel)]="student.name">
+        <input [class.is-invalid]="name.invalid && name.touched"   type="text" class="form-control " #name="ngModel" name="name" placeholder="Enter name" [(ngModel)]="student.name" required>
+          @if(name.invalid && name.touched){
+          <small class="text-danger">Name is mandatory</small>
+          }
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="student.email" >
+        <input  [class.is-invalid]="email.invalid && email.touched" type="email" class="form-control" #email="ngModel" name="email" placeholder="Enter email" [(ngModel)]="student.email" required email >
+
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+        </div>
       </div>
       <div class="form-group">
         <label for="mobile">Mobile:</label>
@@ -48,7 +57,8 @@
           <option value="Web API">Web API</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <!-- [disabled]="studentReg.invalid" -->
+      <button  type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </div>

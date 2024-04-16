@@ -11,12 +11,32 @@
       "course": ""
     },
     {
-      "id": 0,
+      "id": "0",
       "name": "VENKAT SHIVA REDDY",
       "email": "venkatshiva.reddy@gmail.com",
       "mobile": "09342931112",
       "dob": "2024-04-26",
       "gender": "male",
+      "subscribe": true,
+      "course": "Java"
+    },
+    {
+      "id": 0,
+      "name": "Test",
+      "email": "email@mail.com",
+      "mobile": "343423423",
+      "dob": "2024-04-27",
+      "gender": "male",
+      "subscribe": true,
+      "course": ".Net"
+    },
+    {
+      "id": 0,
+      "name": "new student",
+      "email": "email@mail.com",
+      "mobile": "sdfsdfsdfsdf",
+      "dob": "2024-04-26",
+      "gender": "female",
       "subscribe": true,
       "course": "Java"
     }
