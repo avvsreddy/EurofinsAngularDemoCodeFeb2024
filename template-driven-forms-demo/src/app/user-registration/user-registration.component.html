@@ -1,0 +1,55 @@
+<div class="container mt-5 bg-light  ">
+    <div class="row justify-content-center ">
+        <div class="col-6">
+    <h2>Student Registration Form</h2>
+
+<!-- {{studentReg.form | json}} -->
+
+{{student | json}}
+    <form #studentReg="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter name" [(ngModel)]="student.name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="student.email" >
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input type="tel" class="form-control" name="mobile" placeholder="Enter mobile" [(ngModel)]="student.mobile">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" class="form-control" name="dob"  [(ngModel)]="student.dob">
+      </div>
+      <div class="form-group">
+        <label>Gender:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked [(ngModel)]="student.gender">
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="female" value="female" [(ngModel)]="student.gender">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="subscribe" [(ngModel)]="student.subscribe">
+        <label class="form-check-label" for="subscribe">Subscribe to News Letter</label>
+      </div>
+      <div class="form-group">
+        <label for="course">Course:</label>
+        <select class="form-control" name="course" [(ngModel)]="student.course">
+            <option value="">Select Course</option>
+            <option value=".Net">.Net</option>
+          <option value="Java">Java</option>
+          <option value="Angular">Angular</option>
+          <option value="Web API">Web API</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+</div>

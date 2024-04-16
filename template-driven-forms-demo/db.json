@@ -1,0 +1,24 @@
+{
+  "student-reg": [
+    {
+      "id": "0",
+      "name": "",
+      "email": "",
+      "mobile": "",
+      "dob": "",
+      "gender": "",
+      "subscribe": false,
+      "course": ""
+    },
+    {
+      "id": 0,
+      "name": "VENKAT SHIVA REDDY",
+      "email": "venkatshiva.reddy@gmail.com",
+      "mobile": "09342931112",
+      "dob": "2024-04-26",
+      "gender": "male",
+      "subscribe": true,
+      "course": "Java"
+    }
+  ]
+}
