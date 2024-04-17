@@ -1,0 +1,78 @@
+<div class="container">
+ 
+  <div class="row justify-content-center ">
+    
+    <div class="col-6">
+      <h1>Student Form</h1>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="rollno" class="form-label">Roll Number</label>
+      <input [class.is-invalid]="RollNo?. invalid && RollNo?.touched"   type="text" class="form-control" id="rollno" name="rollno" formControlName="rollno" >
+
+<!-- @if(RollNo?.invalid && RollNo?.touched){
+      <small class="text-danger">Roll Number is Required</small>
+} -->
+<small class="text-d">{{rollNoErrMsg}}</small>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input [class.is-invalid]="studentForm.get('email')?.invalid && studentForm.get('email')?.touched"  type="email" class="form-control" id="email" name="email" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label for="mobile" class="form-label">Mobile</label>
+      <input [class.is-invalid]="MobileNo?.invalid && MobileNo?.touched"  type="text" class="form-control" id="mobile" name="mobile" formControlName="mobile">
+      <div class="text-danger " *ngIf="MobileNo?.dirty && MobileNo?.invalid">
+        Mobile number should start with digit 9 and it should have 10 digits.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="gender" class="form-label">Gender</label>
+      <select class="form-select" id="gender" name="gender" formControlName="gender">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      
+      <input type="checkbox" class="form-check-input" id="subscribe" name="subscribe" formControlName="subscribe">
+      <label for="subscribe" class="form-label"> Subscribe for News Letter</label>
+    </div>
+
+<!-- skills -->
+
+<div class="mb-3" formArrayName="skills">
+  <div>
+    <label for="skill" class="form-label">Add Skill</label> 
+  </div>
+  <!-- @for (item of Skills.controls; track $index) { -->
+    <div class="row" *ngFor="let item of Skills.controls; let i = index">
+      <div class="col">
+          <input type="text" class="form-control" id="i" name="i" [formControlName]="i">
+        </div>
+
+    
+      <div class="col">
+
+        <div> <button class="btn btn-outline-danger" (click)="deleteSkill(i)"> Delete Skill</button>  </div>
+      </div>
+    </div>
+    
+    
+  <!-- } -->
+  <div> <button class="btn btn-outline-primary" (click)="addSkill()"> Add Skill</button>  </div>
+</div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+
+{{Skills.value | json}}
